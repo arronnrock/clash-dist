@@ -1,0 +1,7 @@
+proxies:
+  - {name: JMS-842915@c87s1.portablesubmarines.com:7171, server: c87s1.portablesubmarines.com, port: 7171, type: ss, cipher: aes-256-gcm, password: 8gaFPZGYgFxLsRgY}
+  - {name: JMS-842915@c87s2.portablesubmarines.com:7171, server: c87s2.portablesubmarines.com, port: 7171, type: ss, cipher: aes-256-gcm, password: 8gaFPZGYgFxLsRgY}
+  - {name: JMS-842915@c87s3.portablesubmarines.com:7171, server: c87s3.portablesubmarines.com, port: 7171, type: vmess, uuid: b0c9440e-3e26-4770-8e79-75f5c35eddf3, alterId: 0, cipher: auto, tls: false}
+  - {name: JMS-842915@c87s4.portablesubmarines.com:7171, server: c87s4.portablesubmarines.com, port: 7171, type: vmess, uuid: b0c9440e-3e26-4770-8e79-75f5c35eddf3, alterId: 0, cipher: auto, tls: false}
+  - {name: JMS-842915@c87s5.portablesubmarines.com:7171, server: c87s5.portablesubmarines.com, port: 7171, type: vmess, uuid: b0c9440e-3e26-4770-8e79-75f5c35eddf3, alterId: 0, cipher: auto, tls: false}
+  - {name: JMS-842915@c87s801.portablesubmarines.com:7171, server: c87s801.portablesubmarines.com, port: 7171, type: vmess, uuid: b0c9440e-3e26-4770-8e79-75f5c35eddf3, alterId: 0, cipher: auto, tls: false}
