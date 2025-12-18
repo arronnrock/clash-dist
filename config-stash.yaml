@@ -29,8 +29,8 @@ dns:
     - 119.29.29.29
 
   nameserver-policy:
-    'e.szridge.com': [10.0.0.1, 10.0.0.200]
-    '*.szridge.com': [10.0.0.1, 10.0.0.200]
+    'e.szridge.com': 10.0.0.1
+    '*.szridge.com': 10.0.0.1
 
 proxy-providers:
   ProviderA:
