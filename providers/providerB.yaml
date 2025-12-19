@@ -1,5 +1,5 @@
 proxies:
-  - {name: 距离下次重置剩余：14 天, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: 距离下次重置剩余：13 天, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-TEST-0.5x, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-TEST-0.5x-多线, server: traffic.a1.xfn.gfw250.com, port: 64354, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-IEPL-01-CTCSCI, server: szauto.868103.xyz, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
@@ -95,15 +95,12 @@ proxies:
   - {name: US-05-Leassweb, server: iengjsngkwq.868103.xyz, port: 26040, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-IEPL-01-Dataforest, server: szauto.868103.xyz, port: 26012, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-IEPL-02-BAGE, server: szauto.868103.xyz, port: 26013, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-IEPL-03-Eons, server: szauto.868103.xyz, port: 26014, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-IEPL-04-Leaseweb, server: szauto.868103.xyz, port: 26015, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-BJDE-01-Dataforest, server: jd.868103.xyz, port: 36012, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-BJDE-02-BAGE, server: jd.868103.xyz, port: 36013, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-BJDE-03-Eons, server: jd.868103.xyz, port: 36014, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-BJDE-04-Leaseweb, server: jd.868103.xyz, port: 36015, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-01-Dataforest, server: iengjsngkwq.868103.xyz, port: 26012, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-02-BAGE, server: iengjsngkwq.868103.xyz, port: 26013, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-03-Eons, server: iengjsngkwq.868103.xyz, port: 26014, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: DE-04-Leaseweb, server: iengjsngkwq.868103.xyz, port: 26015, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: UK-IEPL-01-HostHatch, server: szauto.868103.xyz, port: 26016, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: UK-BJDE-01-HostHatch, server: jd.868103.xyz, port: 36016, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
