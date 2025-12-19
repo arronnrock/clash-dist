@@ -299,6 +299,7 @@ proxy-groups:
     type: select
     proxies:
       - HK
+      - HK-AUTO
       - US
       - Proxies
       - DIRECT
