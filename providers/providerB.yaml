@@ -1,5 +1,5 @@
 proxies:
-  - {name: 距离下次重置剩余：13 天, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: 距离下次重置剩余：12 天, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-TEST-0.5x, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-TEST-0.5x-多线, server: traffic.a1.xfn.gfw250.com, port: 64354, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-IEPL-01-CTCSCI, server: szauto.868103.xyz, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
@@ -43,14 +43,14 @@ proxies:
   - {name: SG-Pre-04-Jinx, server: ucjgosnvkd.308568.xyz, port: 36011, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-Pre-05-HostHatch, server: ucjgosnvkd.308568.xyz, port: 36010, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-Pre-07-Leaseweb, server: ucjgosnvkd.308568.xyz, port: 36022, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: JP-IEPL-01-Eons, server: szauto.868103.xyz, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: JP-IEPL-01-Sakura, server: szauto.868103.xyz, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-02-JinX, server: szauto.868103.xyz, port: 26031, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-03-Akari, server: szauto.868103.xyz, port: 26025, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-04-HostHatch, server: szauto.868103.xyz, port: 26029, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-05-DDPS, server: szauto.868103.xyz, port: 26028, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-06-DMIT, server: szauto.868103.xyz, port: 26027, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-07-Misaka, server: szauto.868103.xyz, port: 36026, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: JP-Huawei-01-Eons, server: hwjpgasdgwqf.868103.xyz, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: JP-Huawei-01-Sakura, server: hwjpgasdgwqf.868103.xyz, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-Huawei-02-JinX, server: hwjpgasdgwqf.868103.xyz, port: 46031, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-Huawei-03-Akari, server: hwjpgasdgwqf.868103.xyz, port: 46025, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-Huawei-04-HostHatch, server: hwjpgasdgwqf.868103.xyz, port: 42877, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
@@ -59,7 +59,7 @@ proxies:
   - {name: JP-Huawei-07-Misaka, server: hwjpgasdgwqf.868103.xyz, port: 46026, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-Huawei-08-SoftBank, server: hwjpgasdgwqf.868103.xyz, port: 26032, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-Huawei-09-Sonet, server: hwjpgasdgwqf.868103.xyz, port: 26033, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: JP-01-Eons, server: iengjsngkwq.868103.xyz, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: JP-01-Sakura, server: iengjsngkwq.868103.xyz, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-02-JinX, server: iengjsngkwq.868103.xyz, port: 26031, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-03-Akari, server: iengjsngkwq.868103.xyz, port: 26025, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-04-HostHatch, server: iengjsngkwq.868103.xyz, port: 26029, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
