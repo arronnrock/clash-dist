@@ -1,5 +1,5 @@
 proxies:
-  - {name: 距离下次重置剩余：11 天, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: 距离下次重置剩余：10 天, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-TEST-0.5x, server: traffic.a1.szx.gfw250.com, port: 60136, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-TEST-0.5x-多线, server: traffic.a1.xfn.gfw250.com, port: 64354, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-IEPL-01-CTCSCI, server: szauto.868103.xyz, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
