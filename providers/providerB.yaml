@@ -17,15 +17,15 @@ proxies:
   - {name: HK-07-DMIT, server: iejfgqngosmv.vkhaidao.com, port: 26021, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-09-Sakura, server: iejfgqngosmv.vkhaidao.com, port: 26045, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-11-Akari, server: iejfgqngosmv.vkhaidao.com, port: 26050, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-01-CTCSCI, server: premsbngoanqwb.308568.xyz, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-02-JinX, server: premsbngoanqwb.308568.xyz, port: 26002, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-03-HGC, server: premsbngoanqwb.308568.xyz, port: 26003, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-04-Eons, server: premsbngoanqwb.308568.xyz, port: 26004, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-05-HostHatch, server: premsbngoanqwb.308568.xyz, port: 26005, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MzQzMjg5MzhhMjJmMWQ0MGRlMGIwY2E5ZDg4OTlkZjg=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
-  - {name: HK-Pre-06-Misaka, server: premsbngoanqwb.308568.xyz, port: 26006, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-07-DMIT, server: premsbngoanqwb.308568.xyz, port: 26021, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-09-Sakura, server: premsbngoanqwb.308568.xyz, port: 26045, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: HK-Pre-11-Akari, server: premsbngoanqwb.308568.xyz, port: 26050, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-01-CTCSCI, server: ucdngmboenq.vkhaidao.com, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-02-JinX, server: ucdngmboenq.vkhaidao.com, port: 26002, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-03-HGC, server: ucdngmboenq.vkhaidao.com, port: 26003, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-04-Eons, server: ucdngmboenq.vkhaidao.com, port: 26004, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-05-HostHatch, server: ucdngmboenq.vkhaidao.com, port: 26005, type: ss, cipher: 2022-blake3-aes-256-gcm, password: NDJkYmFlY2FmODIzOGUxY2Q5NmZmYjFlNGIzODE3YzM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: HK-Pre-06-Misaka, server: ucdngmboenq.vkhaidao.com, port: 26006, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-07-DMIT, server: ucdngmboenq.vkhaidao.com, port: 26021, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-09-Sakura, server: ucdngmboenq.vkhaidao.com, port: 26045, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: HK-Pre-11-Akari, server: ucdngmboenq.vkhaidao.com, port: 26050, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-IEPL-01-SG.GS, server: szhdbvuonad.vkhaidao.com, port: 26007, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-IEPL-02-Datacamp, server: szhdbvuonad.vkhaidao.com, port: 26008, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-IEPL-03-Eons, server: szhdbvuonad.vkhaidao.com, port: 26009, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
@@ -38,12 +38,12 @@ proxies:
   - {name: SG-04-JinX, server: iejfgqngosmv.vkhaidao.com, port: 26011, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-05-HostHatch, server: iejfgqngosmv.vkhaidao.com, port: 26010, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: SG-07-Leaseweb, server: iejfgqngosmv.vkhaidao.com, port: 26022, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: SG-Pre-01-SG.GS, server: premsbngoanqwb.308568.xyz, port: 36007, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: SG-Pre-02-Datacamp, server: premsbngoanqwb.308568.xyz, port: 36008, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: SG-Pre-03-Eons, server: premsbngoanqwb.308568.xyz, port: 36009, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: SG-Pre-04-Jinx, server: premsbngoanqwb.308568.xyz, port: 36011, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: SG-Pre-05-HostHatch, server: premsbngoanqwb.308568.xyz, port: 36010, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: SG-Pre-07-Leaseweb, server: premsbngoanqwb.308568.xyz, port: 36022, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: SG-Pre-01-SG.GS, server: ucdngmboenq.vkhaidao.com, port: 26007, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: SG-Pre-02-Datacamp, server: ucdngmboenq.vkhaidao.com, port: 26008, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: SG-Pre-03-Eons, server: ucdngmboenq.vkhaidao.com, port: 26009, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: SG-Pre-04-Jinx, server: ucdngmboenq.vkhaidao.com, port: 26011, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: SG-Pre-05-HostHatch, server: ucdngmboenq.vkhaidao.com, port: 26010, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: SG-Pre-07-Leaseweb, server: ucdngmboenq.vkhaidao.com, port: 26022, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-01-Sakura, server: szhdbvuonad.vkhaidao.com, port: 26030, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-02-JinX, server: szhdbvuonad.vkhaidao.com, port: 26031, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: JP-IEPL-03-Akari, server: szhdbvuonad.vkhaidao.com, port: 26025, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
@@ -71,9 +71,9 @@ proxies:
   - {name: TW-02-AKILE, server: iejfgqngosmv.vkhaidao.com, port: 26038, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: TW-03-Akari, server: iejfgqngosmv.vkhaidao.com, port: 26039, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: TW-04-MoeChuang, server: iejfgqngosmv.vkhaidao.com, port: 26042, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: TW-Pre-02-AKILE, server: premsbngoanqwb.308568.xyz, port: 36038, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: TW-Pre-03-Akari, server: premsbngoanqwb.308568.xyz, port: 36039, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: TW-Pre-04-MoeChuang, server: premsbngoanqwb.308568.xyz, port: 36042, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: TW-Pre-02-AKILE, server: ucdngmboenq.vkhaidao.com, port: 26038, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: TW-Pre-03-Akari, server: ucdngmboenq.vkhaidao.com, port: 26039, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: TW-Pre-04-MoeChuang, server: ucdngmboenq.vkhaidao.com, port: 26042, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: US-IEPL-01-HostHatch, server: szhdbvuonad.vkhaidao.com, port: 26034, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: US-IEPL-02-Jinx, server: szhdbvuonad.vkhaidao.com, port: 26035, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: US-IEPL-03-Alpha, server: szhdbvuonad.vkhaidao.com, port: 26036, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
