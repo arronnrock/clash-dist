@@ -1,5 +1,5 @@
 proxies:
-  - {name: 距离下次重置剩余：6 天, server: szhdbvuonad.vkhaidao.com, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: 距离下次重置剩余：5 天, server: szhdbvuonad.vkhaidao.com, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-IEPL-01-CTCSCI, server: szhdbvuonad.vkhaidao.com, port: 26001, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-IEPL-02-JinX, server: szhdbvuonad.vkhaidao.com, port: 26002, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: HK-IEPL-03-HGC, server: szhdbvuonad.vkhaidao.com, port: 26003, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
