@@ -93,15 +93,15 @@ proxies:
   - {name: US-03--Alpha, server: iejfgqngosmv.vkhaidao.com, port: 26036, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: US-04-Eons, server: iejfgqngosmv.vkhaidao.com, port: 26033, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
   - {name: US-05-Leassweb, server: iejfgqngosmv.vkhaidao.com, port: 26040, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-IEPL-01-Dataforest, server: szhdbvuonad.vkhaidao.com, port: 26012, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-IEPL-02-BAGE, server: szhdbvuonad.vkhaidao.com, port: 26013, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-IEPL-04-Leaseweb, server: szhdbvuonad.vkhaidao.com, port: 26015, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-BJDE-01-Dataforest, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36012, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-BJDE-02-BAGE, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36013, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-BJDE-04-Leaseweb, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36015, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-01-Dataforest, server: iejfgqngosmv.vkhaidao.com, port: 26012, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-02-BAGE, server: iejfgqngosmv.vkhaidao.com, port: 26013, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
-  - {name: DE-04-Leaseweb, server: iejfgqngosmv.vkhaidao.com, port: 26015, type: ss, cipher: aes-128-gcm, password: e1a96753-330c-4064-95ac-b6860ef43812}
+  - {name: DE-IEPL-01-Dataforest, server: szhdbvuonad.vkhaidao.com, port: 26012, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MTc2ZTA2ZDI0Y2U1YWIyYzgyNDQxNjFhNmY2NjNjZjE=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-IEPL-02-BAGE, server: szhdbvuonad.vkhaidao.com, port: 26013, type: ss, cipher: 2022-blake3-aes-256-gcm, password: ZDQwZmYxYjU2NDk1N2NmNzJlMzBlN2E2OWJjZDg2ZjM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-IEPL-04-Leaseweb, server: szhdbvuonad.vkhaidao.com, port: 26015, type: ss, cipher: 2022-blake3-aes-256-gcm, password: NTlmN2I5NmZjMzU4ZWJiNmE5ZjY5MGNkOTI1ODUxZTM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-BJDE-01-Dataforest, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36012, type: ss, cipher: 2022-blake3-aes-256-gcm, password: ZDZlMjcxMTkyYjcyMzdkY2U5YzJmNTc5NGY5NDM0MWE=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-BJDE-02-BAGE, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36013, type: ss, cipher: 2022-blake3-aes-256-gcm, password: NDk4MGM4MmExNjc0MzIxZmVmNWYxYTliN2QxMWZkMTA=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-BJDE-04-Leaseweb, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36015, type: ss, cipher: 2022-blake3-aes-256-gcm, password: ZGMyODBmYmNiOGE1NWI0OWRiYjgxMTI5ZTFmYjYxZjc=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-01-Dataforest, server: iejfgqngosmv.vkhaidao.com, port: 26012, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MTc2ZTA2ZDI0Y2U1YWIyYzgyNDQxNjFhNmY2NjNjZjE=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-02-BAGE, server: iejfgqngosmv.vkhaidao.com, port: 26013, type: ss, cipher: 2022-blake3-aes-256-gcm, password: ZDQwZmYxYjU2NDk1N2NmNzJlMzBlN2E2OWJjZDg2ZjM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: DE-04-Leaseweb, server: iejfgqngosmv.vkhaidao.com, port: 26015, type: ss, cipher: 2022-blake3-aes-256-gcm, password: NTlmN2I5NmZjMzU4ZWJiNmE5ZjY5MGNkOTI1ODUxZTM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
   - {name: UK-IEPL-01-HostHatch, server: szhdbvuonad.vkhaidao.com, port: 26016, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MjY1YzJjZDMwYTdkM2QwYzFjZTQ4ZmUyMjYzZTkwYzU=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
   - {name: UK-BJDE-01-HostHatch, server: bjdeasngudnvlaeq.vkhaidao.com, port: 36016, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MzQzMjg5MzhhMjJmMWQ0MGRlMGIwY2E5ZDg4OTlkZjg=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
   - {name: UK-01-HostHatch, server: iejfgqngosmv.vkhaidao.com, port: 26016, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MjY1YzJjZDMwYTdkM2QwYzFjZTQ4ZmUyMjYzZTkwYzU=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
