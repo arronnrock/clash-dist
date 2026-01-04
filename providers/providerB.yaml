@@ -1,5 +1,5 @@
 proxies:
-  - {name: 距离下次重置剩余：29 天, server: szhdbvuonad.vkhaidao.com, port: 26001, type: ss, cipher: 2022-blake3-aes-256-gcm, password: YWQzZGIzZDlmMGE5M2JkODA3ZTE1NGUzNDBhNDE3ZDI=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
+  - {name: 距离下次重置剩余：28 天, server: szhdbvuonad.vkhaidao.com, port: 26001, type: ss, cipher: 2022-blake3-aes-256-gcm, password: YWQzZGIzZDlmMGE5M2JkODA3ZTE1NGUzNDBhNDE3ZDI=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
   - {name: HK-IEPL-01-CTCSCI, server: szhdbvuonad.vkhaidao.com, port: 26001, type: ss, cipher: 2022-blake3-aes-256-gcm, password: YWQzZGIzZDlmMGE5M2JkODA3ZTE1NGUzNDBhNDE3ZDI=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
   - {name: HK-IEPL-02-JinX, server: szhdbvuonad.vkhaidao.com, port: 26002, type: ss, cipher: 2022-blake3-aes-256-gcm, password: OTYwY2M2ZjJkMWM3ZTg5ZDE1ZDI4MGIwNWNjM2RkZjU=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
   - {name: HK-IEPL-03-HGC, server: szhdbvuonad.vkhaidao.com, port: 26003, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MGIxMDIxOWMyZTMwNmJlNDg5MDU0NGVkMmIxZTUwNmM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=}
