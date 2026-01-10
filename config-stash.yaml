@@ -1,17 +1,3 @@
-############################################################
-# Clash Meta / mihomo Template (占位符版本)
-# 目标（按你今天最终口径）：
-# - 地区：只保留 US / HK / JP / SG
-# - JMS 命名：s1-s3 = US，s4 = JP；s5 / s801 不需要进入地区优选，但总入口保留全量
-# - 风险敏感：AI / PayPal / Apple AI 尽量固定线路（PIN）
-# - Telegram：主要走 HK（低延时优先）
-# - YouTube：默认优先稳定（A=JMS US），备选走 B（US/HK 内小范围自动择优）
-#
-# GitHub Actions 会替换这两个占位符为当前仓库 raw：
-#   https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20878215517  -> dist/providers/providerA.yaml
-#   https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20878215517  -> dist/providers/providerB.yaml
-############################################################
-
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -32,10 +18,26 @@ dns:
     'e.szridge.com': 10.0.0.1
     '*.szridge.com': 10.0.0.1
 
+proxies:
+  - name: "🇺🇸 A-BiggerBOX"
+    type: vmess
+    server: 45.62.126.254           # 填 IP
+    port: 2082               # 填端口
+    uuid: "93f5c691-ad0c-401c-ad36-4b6f1c65a92d"    # 填 UUID
+    alterId: 0
+    cipher: auto
+    udp: true
+    # 如果是 WebSocket (ws) 协议，通常还需要下面这些，不是则删除
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: ""
+        
 proxy-providers:
   ProviderA:
     type: http
-    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20878215517
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20878660850
     interval: 3600
     path: ./providers/providerA.yaml
     health-check:
@@ -45,7 +47,7 @@ proxy-providers:
 
   ProviderB:
     type: http
-    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20878215517
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20878660850
     interval: 3600
     path: ./providers/providerB.yaml
     health-check:
@@ -55,238 +57,154 @@ proxy-providers:
 
 proxy-groups:
   ##########################################################
-  # 0) 全量与导航入口
+  # 1. 核心地区入口 (极简扁平化设计)
+  # 直接筛选 Provider 内容，不建立中间组
   ##########################################################
-  - name: ALL
-    type: select
-    use:
-      - ProviderA
-      - ProviderB
-
-  - name: Auto
-    type: url-test
-    use:
-      - ProviderA
-      - ProviderB
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 80
-
-  # 你日常只需要看这个：包含 US/JP/HK/SG + 全量 + Auto
-  - name: Proxies
-    type: select
-    proxies:
-      - US
-      - HK
-      - JP
-      - SG
-      - ALL
-      - Auto
-      - DIRECT
-
-  ##########################################################
-  # 1) ProviderA（JMS）映射：按 s 编号分流
-  # - US：s1-s3
-  # - JP：s4
-  # - s5/s801 不进入地区优选，但仍在 ALL/Proxies 里可见
-  ##########################################################
-  - name: JMS-US
-    type: select
-    use:
-      - ProviderA
-    filter: "(?i)@c87s(1|2|3)\\b"
-
-  - name: JMS-JP
-    type: select
-    use:
-      - ProviderA
-    filter: "(?i)@c87s4\\b"
-
-  ##########################################################
-  # 2) ProviderB 地区池（按名称关键词）
-  # 注：关键词只是“尽量匹配”，不强依赖；匹配不到也能通过 ALL 兜底
-  ##########################################################
-  - name: B-US
-    type: select
-    use:
-      - ProviderB
-    filter: "(?i)(\\bUS\\b|USA|United\\s*States|美国|洛杉矶|圣何塞|西雅图|达拉斯|纽约)"
-
-  - name: B-JP
-    type: select
-    use:
-      - ProviderB
-    filter: "(?i)(\\bJP\\b|Japan|日本|东京|大阪|埼玉)"
-
-  - name: B-HK
-    type: select
-    use:
-      - ProviderB
-    filter: "(?i)(\\bHK\\b|Hong\\s*Kong|香港)"
-
-  - name: B-SG
-    type: select
-    use:
-      - ProviderB
-    filter: "(?i)(\\bSG\\b|Singapore|新加坡)"
-
-  ##########################################################
-  # 3) 地区入口（A+B 的该地区集合）
-  ##########################################################
+  
+  # US: 追求速度，使用 url-test 自动择优
+  # 包含: A-BiggerBOX + ProviderA(US) + ProviderB(US)
   - name: US
-    type: select
+    type: url-test
     proxies:
-      - JMS-US
-      - B-US
-      - ALL
-      - DIRECT
-
-  - name: JP
-    type: select
-    proxies:
-      - JMS-JP
-      - B-JP
-      - ALL
-      - DIRECT
-
-  - name: HK
-    type: select
-    proxies:
-      - B-HK
-      - ALL
-      - DIRECT
-
-  - name: SG
-    type: select
-    proxies:
-      - B-SG
-      - ALL
-      - DIRECT
-
-  ##########################################################
-  # 4) 风险敏感固定出口（PIN）
-  # 目标：AI / PayPal / AppleAI 只通过 US-PIN 出口，尽量保持同一线路/同一 IP
-  ##########################################################
-  # US-PIN：把候选限定在“US 合集”，但最终由你手动选定一个节点长期不动
-  - name: US-PIN
-    type: select
+      - "🇺🇸 A-BiggerBOX"
     use:
       - ProviderA
       - ProviderB
-    # 同时覆盖：JMS-US（c87s1-3）+ B 的 US 关键词节点
-    filter: "(?i)(@c87s(1|2|3)\\b|\\bUS\\b|USA|United\\s*States|美国)"
-
-  - name: AI-PIN
-    type: select
-    proxies:
-      - US-PIN
-      - DIRECT
-
-  - name: PayPal-PIN
-    type: select
-    proxies:
-      - US-PIN
-      - DIRECT
-
-  - name: AppleAI-PIN
-    type: select
-    proxies:
-      - US-PIN
-      - DIRECT
-
-  ##########################################################
-  # 5) Telegram：HK 低延时优先（仅在 HK 内自动择优，避免跨区乱跳）
-  ##########################################################
-  - name: HK-AUTO
-    type: url-test
-    use:
-      - ProviderB
-    filter: "(?i)(\\bHK\\b|Hong\\s*Kong|香港)"
+    # 筛选所有带 US/美国 等关键词，以及JMS的 s1-s3
+    filter: "(?i)(@c87s(1|2|3)\\b|\\bUS\\b|USA|United\\s*States|美国|洛杉矶|圣何塞|西雅图|达拉斯|纽约)"
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
 
-  - name: Telegram
-    type: select
-    proxies:
-      - HK-AUTO
-      - HK
-      - US
-      - ALL
-      - DIRECT
-
-  ##########################################################
-  # 6) YouTube：A 更稳定但无 HK；B 延时好线路多但稳定差
-  # 设计：默认稳定优先（YT-A = JMS-US）
-  #      B 的自动择优拆分为 US 池和 HK 池，避免在中国环境下 HK 永远胜出
-  ##########################################################
-  - name: YT-A
-    type: select
-    proxies:
-      - JMS-US
-      - B-US
-      - US
-      - ALL
-      - DIRECT
-
-  # B-US：只在 B 的 US 节点内做 url-test（不让 HK 参与竞争）
-  - name: YT-B-US-AUTO
-    type: url-test
-    use:
-      - ProviderB
-    filter: "(?i)(\\bUS\\b|USA|United\\s*States|美国|洛杉矶|圣何塞|西雅图|达拉斯|纽约)"
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 80
-
-  # B-HK：只在 B 的 HK 节点内做 url-test（用于低延时偏好，但你知道稳定性可能更差）
-  - name: YT-B-HK-AUTO
-    type: url-test
+  # HK: 追求稳定不乱跳，使用 fallback (故障转移)
+  # 只要排在前面的节点是好的，就一直用它
+  - name: HK
+    type: fallback
     use:
       - ProviderB
     filter: "(?i)(\\bHK\\b|Hong\\s*Kong|香港)"
     url: http://www.gstatic.com/generate_204
     interval: 300
+
+  # JP: 追求稳定，使用 fallback
+  - name: JP
+    type: fallback
+    use:
+      - ProviderA
+      - ProviderB
+    filter: "(?i)(@c87s4\\b|\\bJP\\b|Japan|日本|东京|大阪|埼玉)"
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
+  # SG: 追求稳定，使用 fallback
+  - name: SG
+    type: fallback
+    use:
+      - ProviderB
+    filter: "(?i)(\\bSG\\b|Singapore|新加坡)"
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
+  ##########################################################
+  # 2. 风险控制与手动固定 (PIN)
+  ##########################################################
+  
+  # 这里的节点完全手动选择，用于 AI/PayPal 养号
+  # 包含了 A-BiggerBOX 和所有 US 节点
+  - name: US-PIN
+    type: select
+    proxies:
+      - "🇺🇸 A-BiggerBOX"
+    use:
+      - ProviderA
+      - ProviderB
+    filter: "(?i)(@c87s(1|2|3)\\b|\\bUS\\b|USA|United\\s*States|美国)"
+
+  # AI 专用入口
+  - name: AI-PIN
+    type: select
+    proxies:
+      - US-PIN
+      - "🇺🇸 A-BiggerBOX" 
+      - DIRECT
+
+  # Apple Private Relay 专用
+  - name: AppleAI-PIN
+    type: select
+    proxies:
+      - US-PIN
+      - "🇺🇸 A-BiggerBOX"
+      - DIRECT
+
+  ##########################################################
+  # 3. 业务策略 (精简)
+  ##########################################################
+
+  # 只有在 AI/US-PIN 无法满足时，才需要动这个
+  # 日常这里选 "Auto" 或者 "US" 即可
+  - name: Proxies
+    type: select
+    proxies:
+      - Auto
+      - US
+      - HK
+      - JP
+      - SG
+      - "🇺🇸 A-BiggerBOX"
+      - DIRECT
+
+  # 全局自动测速 (所有节点参与)
+  - name: Auto
+    type: url-test
+    proxies:
+      - "🇺🇸 A-BiggerBOX"
+    use:
+      - ProviderA
+      - ProviderB
+    url: http://www.gstatic.com/generate_204
+    interval: 300
     tolerance: 80
 
-  # YouTube 最终入口：先稳再快（A -> B-US -> B-HK）
+  # 社交软件：优先走 HK (低延迟)，挂了自动切 SG/US
+  - name: Telegram
+    type: select
+    proxies:
+      - HK
+      - SG
+      - US
+      - Proxies
+
+  - name: WhatsApp
+    type: select
+    proxies:
+      - HK
+      - SG
+      - US
+      - Proxies
+
+  # 视频：优先 US (带宽大)，手动可选 HK
   - name: YouTube
     type: select
     proxies:
-      - YT-A
-      - YT-B-US-AUTO
-      - YT-B-HK-AUTO
       - US
       - HK
-      - ALL
-      - DIRECT
+      - Proxies
 
-  ##########################################################
-  # 7) Google：独立策略组（你之前明确要）
-  ##########################################################
-  - name: Google
-    type: select
-    proxies:
-      - US
-      - SG
-      - JP
-      - HK
-      - ALL
-      - DIRECT
-
-  ##########################################################
-  # 8) AI（ChatGPT/Gemini/Claude）与 Apple（日常）入口
-  ##########################################################
+  # AI 服务：强制走 PIN 组
   - name: AI
     type: select
     proxies:
       - AI-PIN
+      - US-PIN
+      - Proxies
+
+  - name: Google
+    type: select
+    proxies:
       - US
-      - SG
-      - JP
       - HK
-      - ALL
-      - DIRECT
+      - JP
+      - Proxies
 
   - name: Apple
     type: select
@@ -294,138 +212,70 @@ proxy-groups:
       - Proxies
       - US
       - DIRECT
-  
-  - name: WhatsApp
+
+  - name: PayPal
     type: select
     proxies:
-      - HK
-      - HK-AUTO
-      - US
-      - Proxies
+      - US-PIN
       - DIRECT
 
   - name: NSFW
     type: select
     proxies:
       - US
-      - SG
-      - JP
       - Proxies
-      - DIRECT
 
 rules:
-  
-  ##########################################################
-  # 企业内网域名强制DIRECT
-  ##########################################################
+  # --- 公司内网 ---
   - DOMAIN,e.szridge.com,DIRECT
   - DOMAIN-SUFFIX,szridge.com,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 
-  ##########################################################
-  # Apple AI / iCloud Private Relay（强制走 AppleAI-PIN -> US-PIN）
-  # 依据你 iPhone 上已验证“全走 US 可用”的域名体系
-  ##########################################################
+  # --- Apple Intelligence / Private Relay (强制 US-PIN) ---
+  - DOMAIN-SUFFIX,mask.icloud.com,AppleAI-PIN
+  - DOMAIN-SUFFIX,mask-h2.icloud.com,AppleAI-PIN
+  - DOMAIN-SUFFIX,mask-api.icloud.com,AppleAI-PIN
   - DOMAIN-SUFFIX,guzzoni.apple.com,AppleAI-PIN
   - DOMAIN-SUFFIX,smoot.apple.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,api.smoot.apple.com,AppleAI-PIN
-
-  - DOMAIN-SUFFIX,gateway.icloud.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,icloud.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,icloud-content.com,AppleAI-PIN
-
-  - DOMAIN-SUFFIX,ls.apple.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,gsp-ssl.ls.apple.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,gsp.apple.com,AppleAI-PIN
-
   - DOMAIN-SUFFIX,apple-relay.apple.com,AppleAI-PIN
   - DOMAIN-SUFFIX,apple-relay.akamaized.net,AppleAI-PIN
   - DOMAIN-SUFFIX,apple-relay.cloudflare.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,apple-relay.fastly-edge.com,AppleAI-PIN
-  - DOMAIN-SUFFIX,mask.apple-dns.net,AppleAI-PIN
-  - DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,AppleAI-PIN
-
-  ##########################################################
-  # AI：ChatGPT / Gemini / Claude（走 AI-PIN）
-  ##########################################################
-  - DOMAIN-SUFFIX,openai.com,AI-PIN
-  - DOMAIN-SUFFIX,chatgpt.com,AI-PIN
-  - DOMAIN-SUFFIX,oaistatic.com,AI-PIN
-  - DOMAIN-SUFFIX,oaiusercontent.com,AI-PIN
-  - DOMAIN-SUFFIX,openaiapi.com,AI-PIN
-
-  - DOMAIN-SUFFIX,anthropic.com,AI-PIN
-  - DOMAIN-SUFFIX,claude.ai,AI-PIN
-
-  - DOMAIN,gemini.google.com,AI-PIN
-  - DOMAIN,generativelanguage.googleapis.com,AI-PIN
-  - DOMAIN,aiplatform.googleapis.com,AI-PIN
-  - DOMAIN,ai.google.dev,AI-PIN
-  - DOMAIN,makersuite.google.com,AI-PIN
- 
-  ##########################################################
-  # WhatsApp （走低延迟）
-  ##########################################################
-  # WhatsApp (calls/messages) — keep stable, prefer HK
-  - DOMAIN,wa.me,WhatsApp
+  
+  # --- AI (ChatGPT / Gemini / Claude) ---
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,chatgpt.com,AI
+  - DOMAIN-SUFFIX,oaistatic.com,AI
+  - DOMAIN-SUFFIX,cdn.openai.com,AI
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,claude.ai,AI
+  - DOMAIN,gemini.google.com,AI
+  - DOMAIN,bard.google.com,AI
+  - DOMAIN,proactivebackend-pa.googleapis.com,AI
+  - DOMAIN,generativelanguage.googleapis.com,AI
+  
+  # --- IM (Telegram / WhatsApp) ---
+  - DOMAIN-SUFFIX,t.me,Telegram
+  - DOMAIN-SUFFIX,telegram.org,Telegram
+  - IP-CIDR,91.108.0.0/16,Telegram,no-resolve
   - DOMAIN-SUFFIX,whatsapp.com,WhatsApp
   - DOMAIN-SUFFIX,whatsapp.net,WhatsApp
-  - DOMAIN-KEYWORD,whatsapp,WhatsApp
-  - DOMAIN-SUFFIX,fbcdn.net,WhatsApp
-  - DOMAIN-SUFFIX,facebook.com,WhatsApp
+  - DOMAIN,wa.me,WhatsApp
 
-  ##########################################################
-  # NSFW （走带宽稳定、Range 请求一致性、连接中断敏感）
-  ##########################################################
+  # --- Media / Other ---
+  - DOMAIN-SUFFIX,youtube.com,YouTube
+  - DOMAIN-SUFFIX,youtu.be,YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,YouTube
   - DOMAIN-SUFFIX,pikpak.com,NSFW
-  - DOMAIN-SUFFIX,mypikpak.com,NSFW
-  - DOMAIN-KEYWORD,pikpak,NSFW
   - DOMAIN-SUFFIX,pornhub.com,NSFW
-  - DOMAIN-SUFFIX,phncdn.com,NSFW
-  - DOMAIN-KEYWORD,pornhub,NSFW
-
-  ##########################################################
-  # Google（非 AI 的通用 Google 流量）
-  ##########################################################
+  - DOMAIN-SUFFIX,paypal.com,PayPal
+  
+  # --- Google General ---
   - DOMAIN-SUFFIX,google.com,Google
   - DOMAIN-SUFFIX,googleapis.com,Google
   - DOMAIN-SUFFIX,gstatic.com,Google
-  - DOMAIN-SUFFIX,googleusercontent.com,Google
 
-  ##########################################################
-  # YouTube
-  ##########################################################
-  - DOMAIN-SUFFIX,youtube.com,YouTube
-  - DOMAIN-SUFFIX,youtu.be,YouTube
-  - DOMAIN-SUFFIX,ytimg.com,YouTube
-  - DOMAIN-SUFFIX,googlevideo.com,YouTube
-  - DOMAIN-SUFFIX,youtubei.googleapis.com,YouTube
-
-  ##########################################################
-  # Telegram
-  ##########################################################
-  - DOMAIN-SUFFIX,t.me,Telegram
-  - DOMAIN-SUFFIX,telegram.org,Telegram
-  - DOMAIN-SUFFIX,telegram.me,Telegram
-  - IP-CIDR,149.154.160.0/20,Telegram,no-resolve
-  - IP-CIDR,91.108.4.0/22,Telegram,no-resolve
-  - IP-CIDR,91.108.8.0/21,Telegram,no-resolve
-  - IP-CIDR,91.108.16.0/22,Telegram,no-resolve
-  - IP-CIDR,91.108.56.0/22,Telegram,no-resolve
-
-  ##########################################################
-  # PayPal（风控敏感 -> PayPal-PIN -> US-PIN）
-  ##########################################################
-  - DOMAIN-SUFFIX,paypal.com,PayPal-PIN
-  - DOMAIN-SUFFIX,paypalobjects.com,PayPal-PIN
-  - DOMAIN-SUFFIX,braintreegateway.com,PayPal-PIN
-  - DOMAIN-SUFFIX,venmo.com,PayPal-PIN
-
-  ##########################################################
-  # 兜底
-  ##########################################################
+  # --- Final ---
   - GEOIP,CN,DIRECT
   - MATCH,Proxies
