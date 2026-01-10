@@ -8,8 +8,8 @@
 # - YouTube：默认优先稳定（A=JMS US），备选走 B（US/HK 内小范围自动择优）
 #
 # GitHub Actions 会替换这两个占位符为当前仓库 raw：
-#   https://raw.githubusercontent.com/arronnrock/clash-config/main/dist/providers/providerA.yaml  -> dist/providers/providerA.yaml
-#   https://raw.githubusercontent.com/arronnrock/clash-config/main/dist/providers/providerB.yaml  -> dist/providers/providerB.yaml
+#   https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20878215517  -> dist/providers/providerA.yaml
+#   https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20878215517  -> dist/providers/providerB.yaml
 ############################################################
 
 mixed-port: 7890
@@ -35,7 +35,7 @@ dns:
 proxy-providers:
   ProviderA:
     type: http
-    url: https://raw.githubusercontent.com/arronnrock/clash-config/main/dist/providers/providerA.yaml
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20878215517
     interval: 3600
     path: ./providers/providerA.yaml
     health-check:
@@ -45,7 +45,7 @@ proxy-providers:
 
   ProviderB:
     type: http
-    url: https://raw.githubusercontent.com/arronnrock/clash-config/main/dist/providers/providerB.yaml
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20878215517
     interval: 3600
     path: ./providers/providerB.yaml
     health-check:
