@@ -37,23 +37,23 @@ proxies:
 proxy-providers:
   ProviderA:
     type: http
-    url: "https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20888401511"
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=20888544863
     interval: 3600
-    #path: ./providers/providerA.yaml
-    #health-check:
-      #enable: true
-      #interval: 600
-      #url: http://www.gstatic.com/generate_204
+    path: ./providers/providerA.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 
   ProviderB:
     type: http
-    url: "https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20888401511"
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=20888544863
     interval: 3600
-    #path: ./providers/providerB.yaml
-    #health-check:
-      #enable: true
-      #interval: 600
-      #url: http://www.gstatic.com/generate_204
+    path: ./providers/providerB.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 
 proxy-groups:
   ##########################################################
@@ -72,38 +72,42 @@ proxy-groups:
       - ProviderB
     # 筛选所有带 US/美国 等关键词，以及JMS的 s1-s3
     filter: "(?i)(@c87s(1|2|3)\\b|\\bUS\\b|USA|United\\s*States|美国|洛杉矶|圣何塞|西雅图|达拉斯|纽约)"
-    url: http://www.gstatic.com/generate_204
+    url: "https://cp.cloudflare.com/generate_204"
     interval: 300
     tolerance: 50
 
-  # HK: 追求稳定不乱跳，使用 fallback (故障转移)
-  # 只要排在前面的节点是好的，就一直用它
+  # HK: 追求稳定不乱跳，使用 url-test，加高容差
   - name: HK
-    type: fallback
+    type: url-test
     use:
       - ProviderB
     filter: "(?i)(\\bHK\\b|Hong\\s*Kong|香港)"
-    url: http://www.gstatic.com/generate_204
+    # 关键修改 1：改用 HTTPS 测速地址（Stash 对此支持更好）
+    url: "https://cp.cloudflare.com/generate_204"
     interval: 300
+    # 关键修改 2：加入容差，数值建议 50-150 之间
+    tolerance: 150
 
-  # JP: 追求稳定，使用 fallback
+  # JP: 追求稳定不乱跳，使用 url-test，加高容差
   - name: JP
-    type: fallback
+    type: url-test
     use:
       - ProviderA
       - ProviderB
     filter: "(?i)(@c87s4\\b|\\bJP\\b|Japan|日本|东京|大阪|埼玉)"
-    url: http://www.gstatic.com/generate_204
+    url: "https://cp.cloudflare.com/generate_204"
     interval: 300
+    tolerance: 150
 
-  # SG: 追求稳定，使用 fallback
+  # SG: 追求稳定不乱跳，使用 url-test，加高容差
   - name: SG
     type: fallback
     use:
       - ProviderB
     filter: "(?i)(\\bSG\\b|Singapore|新加坡)"
-    url: http://www.gstatic.com/generate_204
+    url: "https://cp.cloudflare.com/generate_204"
     interval: 300
+    tolerance: 150
 
   ##########################################################
   # 2. 风险控制与手动固定 (PIN)
