@@ -37,7 +37,7 @@ proxies:
 proxy-providers:
   ProviderA:
     type: http
-    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=21066875611
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerA.yaml?v=21076688855
     interval: 3600
     path: ./providers/providerA.yaml
     health-check:
@@ -47,7 +47,7 @@ proxy-providers:
 
   ProviderB:
     type: http
-    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=21066875611
+    url: https://raw.githubusercontent.com/arronnrock/clash-dist/main/providers/providerB.yaml?v=21076688855
     interval: 3600
     path: ./providers/providerB.yaml
     health-check:
