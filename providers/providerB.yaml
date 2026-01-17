@@ -1,5 +1,5 @@
 proxies:
-  - {name: 距离下次重置剩余：16 天, server: ienvlsiwnyydpl.tkbgmvvasd.org, port: 26001, type: ss, cipher: 2022-blake3-aes-256-gcm, password: YWQzZGIzZDlmMGE5M2JkODA3ZTE1NGUzNDBhNDE3ZDI=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=, udp: true}
+  - {name: 距离下次重置剩余：15 天, server: ienvlsiwnyydpl.tkbgmvvasd.org, port: 26001, type: ss, cipher: 2022-blake3-aes-256-gcm, password: YWQzZGIzZDlmMGE5M2JkODA3ZTE1NGUzNDBhNDE3ZDI=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=, udp: true}
   - {name: HK-IEPL-01-CTCSCI, server: ienvlsiwnyydpl.tkbgmvvasd.org, port: 26001, type: ss, cipher: 2022-blake3-aes-256-gcm, password: YWQzZGIzZDlmMGE5M2JkODA3ZTE1NGUzNDBhNDE3ZDI=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=, udp: true}
   - {name: HK-IEPL-02-JinX, server: ienvlsiwnyydpl.tkbgmvvasd.org, port: 26002, type: ss, cipher: 2022-blake3-aes-256-gcm, password: OTYwY2M2ZjJkMWM3ZTg5ZDE1ZDI4MGIwNWNjM2RkZjU=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=, udp: true}
   - {name: HK-IEPL-03-HGC, server: ienvlsiwnyydpl.tkbgmvvasd.org, port: 26003, type: ss, cipher: 2022-blake3-aes-256-gcm, password: MGIxMDIxOWMyZTMwNmJlNDg5MDU0NGVkMmIxZTUwNmM=:ZTFhOTY3NTMtMzMwYy00MDY0LTk1YWMtYjY4NjBlZjQ=, udp: true}
